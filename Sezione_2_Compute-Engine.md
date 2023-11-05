@@ -22,7 +22,7 @@ In particolare troviamo queste famiglie:
 
 Per ogni famiglia di macchine sono disponibili diverse tipologie appunto, con caratteristiche differenti
 
-![Alt text](<images/E2 type.png>)
+![Alt text](<images/E2_type.png>)
 *Nell'immagine un esempio per la tipologia E2 standard*
 
 

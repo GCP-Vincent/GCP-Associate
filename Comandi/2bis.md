@@ -1,4 +1,4 @@
-## Elenco di comandi utili
+## Elenco di comandi utili eseguiti
 
 ```bash
 gcloud config list project
