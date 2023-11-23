@@ -36,11 +36,11 @@ Vediamo le due tipologie nel dettaglio
 
     Regional MIG -> diverse zone ma nella stessa Region 
 
-  ## Entrando più in dettaglio sull'aggiornamenti in sequenza (rolling updates)
+  ## Entrando più in dettaglio sugli aggiornamenti in sequenza (rolling updates)
     
-    Aggiornamento che viene applicato gradualmente a tutte li istanze di un MIG, fino a quando tutte non sono state aggiornate. 
+    Aggiornamento che viene applicato gradualmente a tutte le istanze di un MIG, fino a quando tutte non sono state aggiornate. Passare da una versione che potrebbe riferirsi ad una vecchia versione dell'applicazione ad una che si rifà ad una nuova versione 
     
-    E' possibile controlalre molti aspetti, ad esempio **quante istanze possono essere rese offline durante l'aggiornamento**, quanto **tempo di attesa** tra un aggiornamento delle istanze, se il nuovo template interessa **tutte le istanze o solo alcune** ecc. Vedremo in dettaglio cosa significa
+    E' possibile controllare molti aspetti, ad esempio **quante istanze possono essere rese offline durante l'aggiornamento**, quanto **tempo di attesa** tra un aggiornamento delle istanze, se il nuovo template interessa **tutte le istanze o solo alcune** ecc. Vedremo in dettaglio cosa significa
 
     Occorre ricordare che:
     - *Occorre controllare lo stato del gruppo per determinare se il deployment dell'aggiornamento è stato eseguito correttamente*. 
@@ -56,7 +56,7 @@ Vediamo le due tipologie nel dettaglio
         - Rappresenta il numero di istanze che posso creare sopra il targetSize, durante un aggiornamento. (costo istanze in più anche se temporanee)
 
     - MaxUnavailable 
-        - Rappresenta il numero massimo di istanze non disponibili durante l'aggiornamento.    
+        - Rappresenta il numero massimo di istanze non disponibili durante l'aggiornamento. Ho 10 istanze e due possono stare offline, due verranno aggiornate e le restanti 8 serviranno a servire le richieste, per poi passare alle successive
 
     *Note: If you set both maxSurge and maxUnavailable properties and both properties resolve to 0, the Updater automatically sets maxUnavailable=1, to ensure that the automated update can always proceed.*
     - MinReadSec (potrebbe essere deprecata)
@@ -133,7 +133,7 @@ Dopo aver eseguito un aggiornamento canary, puoi decidere se eseguire il commit 
 
 ## Rolling replace o restart
 
-Un rolling restart stoppa e fa ripartire tutte le istanze, mentre un rolling replace rimpiazza le istanze (substitute/recreate). Un rolling restart o replace non cambia altro sul gruppo, incluso template instance.
+Un rolling restart stoppa e fa ripartire tutte le istanze, mentre un rolling replace rimpiazza le istanze (substitute/recreate sono sinonimi). Un rolling restart o replace non cambia altro sul gruppo, incluso template instance (stesso modello).
 
 Ci sono molte ragioni per realizzarlo:
 
@@ -143,6 +143,8 @@ Ci sono molte ragioni per realizzarlo:
 - Aggiornamento del sistema operativo o far rieseguire start script per aggiornare il software
 
 E' possibile eseguirlo tramite Google Cloud console, the Google Cloud CLI, o Compute Engine API.
+
+Anche in questo caso sono presenti le opzioni di Maximum surge, maximum unavailable e what you want to do (restart/replace)
 
 
 1. Nella console, vai su Instance groups.
