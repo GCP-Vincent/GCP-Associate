@@ -6,11 +6,11 @@ Due tipologie:
 - **Managed**: VMs identiche create usando un template (MIG)
     - Features: autoscaling, auto healing, managed releases
     
-    ![Alt text](Images/MIG.png)
+    ![Alt text](<images/MIG.png>)
 - **Unmanaged**: VMs differenti
     - Non offrono le features del MIG
 
-    ![Alt text](Images/Unmanaged.png)
+    ![Alt text](<images/Unmanaged.png>)
 
     
 
@@ -62,7 +62,7 @@ Vediamo le due tipologie nel dettaglio
     - MinReadSec (potrebbe essere deprecata)
         - Tempo di attesa prima di considerare una nuova/restart istanza come aggiornata. 
 
-![Alt text](images/configurazione_update_mig.png)
+![Alt text](<images/configurazione_update_mig.png>)
 
 Di default, quanto l'aggiornamento di un MIG è proattivo, le istanze vecchie vengono eliminate e sosituite con le nuove, ed i nuovi nomi. Spesso è utile mantenere il nome delle istanze.
 
@@ -71,7 +71,7 @@ Di default, quanto l'aggiornamento di un MIG è proattivo, le istanze vecchie ve
 -   Scegliere RECREATE anzichè SUBSTITUTE, se utilizzo gcloud CLI
 -   Flag Keep instance names when replacing instances, se lo faccio da console
 
-![Alt text](images/restartVSrecreate.png)
+![Alt text](<images/restartVSrecreate.png>)
 ## Demo Rolling update
 1.  In the Google Cloud console, go to the Instance groups page.
 
